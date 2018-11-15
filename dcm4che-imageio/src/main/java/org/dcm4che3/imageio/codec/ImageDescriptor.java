@@ -126,8 +126,12 @@ public final class ImageDescriptor {
         return frames;
     }
 
+    public boolean isMultiframe() {
+        return frames > 1;
+    }
+
     public int getFrameLength() {
-        return rows * columns * samples * (bitsAllocated>>>3);
+        return rows * columns * samples * bitsAllocated / 8;
     }
 
     public int getLength() {
